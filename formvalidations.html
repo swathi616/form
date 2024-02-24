@@ -1,0 +1,65 @@
+<DOCTYPE HTML>
+<html>
+<head>
+<title>form validations</title>
+<script type="text/javascript">
+function validate()
+{
+if(document.form1.uname.value=="")
+{
+alert("enter username");
+return false;
+}
+if(document.form1.uname.value.length<6)
+{
+alert("enter your username with minimum 6 characters");
+return false;
+}
+if(document.form1.pssword.value=="")
+{
+alert("enter your password");
+return false;
+}
+if(document.form1.password.value.length<8)
+{
+alert("password must contain 8 characters")
+return false;
+}
+if(document.form1.gender.selectedIndex==0)
+{
+alert("please enter gender");
+return false;
+}
+if(document.form1.course.value=="")
+{
+alert("select the course");
+return false;
+}
+if(!document.form1.agree.checked)
+{
+alert("pleasee agree the terms and conditions");
+return false;
+}
+return true;
+}
+</script>
+</head>
+<body>
+<form name="form1" method="post" onSubmit="return validate()">
+enter user name:<input type="text" name="uname"><br>
+enter password:<input type="password"name="password"><br>
+gender:<input type="radio" name="gender" value="male">male
+<input type="radio" name="gender" value="female">female
+<input type="radio" name="gender" value="others">others<br>
+enter course:<select id="course">
+<option value="select">--</option>
+<option value="cse">cse</option>
+<option value"it">it</option>
+<option value="csm">csm</option>
+<option value="cai">cai</option>
+</select><br>
+<input type="checkbox" name="agree" value="checked">agree the terms and condtions<br>
+<input type="submit" name="Submit" value="Submit">
+</form>
+</body>
+</html>
